@@ -10,6 +10,6 @@ QCoro::Task<QByteArray> listDir(const QString &dirPath) {
     co_await process.waitForFinished();
     qDebug() << "Done";
 
-    return basicProcess.readAll();
+    co_return basicProcess.readAll();
 }
 
